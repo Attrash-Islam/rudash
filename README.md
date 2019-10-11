@@ -383,6 +383,27 @@ R_.without(arr1, 2, 3) # => [1]
 ```
 * * *
 
+### <a id="_includes?"></a>`R_.include?(array, value)`
+
+Returns true or false if an array contains a particular value.
+
+#### Arguments
+`array` *(Array)*: The array to inspect.
+
+`value` *(Value)*: The value to check for.
+
+#### Returns
+*(Boolean)*: Returns the true/false result of the values inclusion in the array.
+
+#### Example
+```ruby
+arr1 = [1, 2, 3]
+
+R_.includes?(arr1, 2) # => true
+R_.includes?(arr1, 4) # => false
+```
+* * *
+
 ## `“Collection” Methods`
 
 ### <a id="_each"></a>`R_.each(collection, iteratee_fn = R_.identity)`
