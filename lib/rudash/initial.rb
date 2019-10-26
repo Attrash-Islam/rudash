@@ -1,8 +1,9 @@
 module Rudash
   module Initial
     def initial(array)
-      return [] if !array.is_a?(Array)
-      *initial, last = array
+      return [] unless array.is_a?(Array)
+
+      *initial, _last = array
       initial
     end
   end

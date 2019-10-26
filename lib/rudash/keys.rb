@@ -3,9 +3,9 @@ module Rudash
     def keys(value)
       case value
       when Hash
-        value.map { |key, value| "#{key}" }
+        value.map { |key, _value| key.to_s }
       when Array
-        value.map.with_index { |value, index| "#{index}" }
+        value.map.with_index { |_value, index| index.to_s }
       else
         []
       end

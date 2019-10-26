@@ -1,16 +1,14 @@
 module Rudash
   module ChainUtils
     class ChainWrapper
+      attr_reader :value
+
       def initialize(value, r_)
         @value = value
         @r_ = r_
       end
-      
-      def value
-        @value
-      end
-      
-      def method_missing(method_name, *args, &block)
+
+      def method_missing(method_name, *args, &_block)
         result = @r_.public_send(method_name, @value, *args)
         self.class.new(result, @r_)
       rescue NameError

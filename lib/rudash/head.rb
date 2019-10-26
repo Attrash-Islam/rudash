@@ -1,10 +1,11 @@
 module Rudash
   module Head
     def head(array)
-      return nil if !array.is_a?(Array)
+      return nil unless array.is_a?(Array)
+
       array.first
     end
-    
+
     def first(*args)
       self.head(*args)
     end

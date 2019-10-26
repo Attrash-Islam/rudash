@@ -7,13 +7,13 @@
 module Rudash
   module DynamicArgsCount
     def self.call(func, *args)
-      begin
-        return func.(*args)
-      rescue ArgumentError => e
-        raise ArgumentError.new('Argument Error') if args.size == 0
-        *initial, last = args
-        return self.call(func, *initial)
-      end
+      func.call(*args)
+
+    rescue ArgumentError
+      raise ArgumentError.new('Argument Error') if args.size.zero?
+
+      *initial, _last = args
+      self.call(func, *initial)
     end
   end
 end

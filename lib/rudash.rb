@@ -62,7 +62,7 @@ require_relative './utils/nested_path_creator.rb'
 require_relative './utils/chain_wrapper.rb'
 
 # This is the exposed Gem class that contains all Rudash methods.
-# New methods can use already implemented methods in the library by refering to "self"
+# New methods can use already implemented methods by refering to "self"
 # in the method if and only if the method get extended into the R_ class.
 class R_
   extend Rudash::Map
