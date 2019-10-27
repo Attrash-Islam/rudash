@@ -1,6 +1,6 @@
 module Rudash
   module IsArray
-    def is_array?(value)
+    def array?(value)
       value.is_a?(Array)
     end
   end

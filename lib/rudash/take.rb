@@ -1,7 +1,7 @@
 module Rudash
   module Take
     def take(array, *rest_args)
-      return [] unless self.is_array?(array)
+      return [] unless self.array?(array)
 
       count = self.head(rest_args) || 1
 

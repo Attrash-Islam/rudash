@@ -16,7 +16,7 @@ module Rudash
         elsif acc.is_a?(Hash)
           acc[current.to_sym] || acc[current]
         else
-          nil
+          return nil
         end
       }
 

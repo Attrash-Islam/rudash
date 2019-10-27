@@ -8,7 +8,7 @@ module Rudash
         return self.filter(collection, slice_matcher)
       end
 
-      return [] unless Rudash::Utils.is_function?(predicate_fn)
+      return [] unless Rudash::Utils.function?(predicate_fn)
 
       if collection.is_a?(Array)
         return collection.select.with_index do |x, idx|

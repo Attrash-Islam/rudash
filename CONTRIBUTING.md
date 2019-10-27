@@ -19,7 +19,7 @@ Some notes to be aware of:
 
 - You **MUST** update the README with the changes if relevant (You can copy from the Lodash website documentation).
 
-- All Rudash functions **MUST** be aligned with Ruby community style guidelines, which means that "isNil" becomes "is_nil?", and "groupBy" will be "group_by".
+- All Rudash functions **MUST** be aligned with Ruby community style guidelines, which means that "isNil" becomes "nil?", and "groupBy" will be "group_by".
 
 - You must **ALWAYS** bump the version in your PRs `(/lib/version.rb)`. Make sure to be aligned to the semantic versioning. In here, adding new functions will cause bumping the minor version, fixing some already implemented logic causes bumping the patch version.
 

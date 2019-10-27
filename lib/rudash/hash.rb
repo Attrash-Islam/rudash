@@ -1,6 +1,6 @@
 module Rudash
   module IsHash
-    def is_hash?(value)
+    def hash?(value)
       value.is_a?(Hash)
     end
   end

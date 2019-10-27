@@ -1,5 +1,5 @@
 require_relative './rudash/map.rb'
-require_relative './rudash/is_nil.rb'
+require_relative './rudash/nil.rb'
 require_relative './rudash/filter.rb'
 require_relative './rudash/some.rb'
 require_relative './rudash/every.rb'
@@ -16,18 +16,18 @@ require_relative './rudash/size.rb'
 require_relative './rudash/flip.rb'
 require_relative './rudash/identity.rb'
 require_relative './rudash/get.rb'
-require_relative './rudash/is_array.rb'
-require_relative './rudash/is_equal.rb'
-require_relative './rudash/is_hash.rb'
-require_relative './rudash/is_empty.rb'
+require_relative './rudash/array.rb'
+require_relative './rudash/equal.rb'
+require_relative './rudash/hash.rb'
+require_relative './rudash/empty.rb'
 require_relative './rudash/reverse.rb'
 require_relative './rudash/curry.rb'
-require_relative './rudash/is_number.rb'
+require_relative './rudash/number.rb'
 require_relative './rudash/keys.rb'
 require_relative './rudash/each.rb'
 require_relative './rudash/uniq.rb'
 require_relative './rudash/difference.rb'
-require_relative './rudash/is_string.rb'
+require_relative './rudash/string.rb'
 require_relative './rudash/eq.rb'
 require_relative './rudash/each_right.rb'
 require_relative './rudash/at.rb'
@@ -64,6 +64,8 @@ require_relative './utils/chain_wrapper.rb'
 # This is the exposed Gem class that contains all Rudash methods.
 # New methods can use already implemented methods by refering to "self"
 # in the method if and only if the method get extended into the R_ class.
+
+# rubocop:disable Naming/ClassAndModuleCamelCase
 class R_
   extend Rudash::Map
   extend Rudash::IsNil
@@ -120,3 +122,5 @@ class R_
   extend Rudash::FlowRight
   extend Rudash::Unset
 end
+
+# rubocop:enable Naming/ClassAndModuleCamelCase

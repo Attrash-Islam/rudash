@@ -1,6 +1,6 @@
 module Rudash
   module IsEqual
-    def is_equal?(value, other)
+    def equal?(value, other)
       value == other
     end
   end

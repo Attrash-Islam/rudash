@@ -8,7 +8,7 @@ module Rudash
       str.match(/^(\d)+$/)
     end
 
-    def self.is_function?(func)
+    def self.function?(func)
       func.is_a?(Proc) || func.is_a?(Method)
     end
 

@@ -19,18 +19,18 @@ Rudash was written by a JavaScript developer to help JavaScript developers integ
 ```ruby
 require 'rudash'
 
-double = -> (value) { value * 2 }
-array = [1,2,3]
+double = ->(value) { value * 2 }
+array = [1, 2, 3]
 R_.map(array, double) # => [2,4,6]
 
-is_even = -> (value) { value % 2 === 0 }
-array = [1,2,3,4]
+is_even = ->(value) { value.even? }
+array = [1, 2, 3, 4]
 R_.filter(array, is_even) # => [2,4]
 
 # You can also use inline anonymous function style
-array = [1,2,3,4]
-R_.filter(array,  -> (value) {
-    value % 2 === 0
+array = [1, 2, 3, 4]
+R_.filter(array,  ->(value) {
+    value.even?
 }) # => [2,4]
 ```
 
@@ -69,7 +69,7 @@ Creates a new array concatenating array with any additional arrays and/or values
 
 #### Example
 ```ruby
-arr1 = [1,2,3]
+arr1 = [1, 2, 3]
 arr2 = [4]
 R_.concat(arr1, arr2) # => [1, 2, 3, 4]
 
@@ -90,7 +90,7 @@ Creates an array of unique values that are included in all given arrays.
 #### Example
 ```ruby
 R_.intersection([2, 1], [2, 3]) # => [2]
-R_.intersection([1,2,3], [1,2], [2]) # => [2]
+R_.intersection([1, 2, 3], [1, 2], [2]) # => [2]
 ```
 * * *
 
@@ -130,9 +130,9 @@ Converts all elements in array into a string separated by separator.
 
 #### Example
 ```ruby
-R_.join([1,2,3]) # => '1,2,3'
-R_.join([1,2,3], '*') # => '1*2*3'
-R_.join([1,2,3], 5) # => '15253'
+R_.join([1, 2, 3]) # => '1,2,3'
+R_.join([1, 2, 3], '*') # => '1*2*3'
+R_.join([1, 2, 3], 5) # => '15253'
 R_.join(0) # => ''
 ```
 * * *
@@ -153,10 +153,10 @@ Creates a slice of array from start up to, but not including, end.
 
 #### Example
 ```ruby
-R_.slice([1,2,3], 0, 2) # => [1,2]
-R_.slice([1,2,3], 1) # => [2,3]
-R_.slice([1,2,3], 1, 2) # => [2]
-R_.slice([1,2,3,4,5,6], 0, 3) # => [1,2,3]
+R_.slice([1, 2, 3], 0, 2) # => [1, 2]
+R_.slice([1, 2, 3], 1) # => [2,3]
+R_.slice([1, 2, 3], 1, 2) # => [2]
+R_.slice([1,2,3,4,5,6], 0, 3) # => [1, 2, 3]
 ```
 * * *
 
@@ -176,7 +176,7 @@ Removes all elements from array that predicate returns truthy for and returns an
 ```ruby
 # Simple arrays
 array = [1, 2, 3, 4]
-is_even = -> (v) { v % 2 === 0 }
+is_even = ->(v) { v.even? }
 removed_items = R_.remove(array, is_even)
 
 removed_items # => [2,4]
@@ -211,7 +211,7 @@ R_.first
 
 #### Example
 ```ruby
-array = [1,2,3]
+array = [1, 2, 3]
 R_.head(array) # => 1
 
 empty_array = []
@@ -231,7 +231,7 @@ Gets the last element of array.
 
 #### Example
 ```ruby
-array = [1,2,3]
+array = [1, 2, 3]
 R_.last(array) # => 3
 
 empty_array = []
@@ -251,7 +251,7 @@ Gets all but the first element of array.
 
 #### Example
 ```ruby
-array = [1,2,3]
+array = [1, 2, 3]
 R_.tail(array) # => [2,3]
 
 empty_array = []
@@ -272,11 +272,11 @@ Creates a slice of array with n elements taken from the beginning.
 
 #### Example
 ```ruby
-array = [1,2,3]
+array = [1, 2, 3]
 R_.take(array) # => [1]
 
-array = [1,2,3]
-R_.take(array, 2) # => [1,2]
+array = [1, 2, 3]
+R_.take(array, 2) # => [1, 2]
 ```
 * * *
 
@@ -292,8 +292,8 @@ Gets all but the last element of array.
 
 #### Example
 ```ruby
-array = [1,2,3]
-R_.initial(array) # => [1,2]
+array = [1, 2, 3]
+R_.initial(array) # => [1, 2]
 
 one_item_array = [1]
 R_.initial(one_item_array) # => []
@@ -313,7 +313,7 @@ Creates a duplicate-free version of an array.
 #### Example
 ```ruby
 array = [1,2, 2, 3, 3, 3]
-R_.uniq(array) # => [1,2,3]
+R_.uniq(array) # => [1, 2, 3]
 ```
 * * *
 
@@ -402,18 +402,18 @@ R_.for_each
 ```ruby
 
 # Hash
-hash = {a: 1, b: 2}
+hash = { a: 1, b: 2 }
 sum = 0
-eacher = -> (value) { sum += value }
+eacher = ->(value) { sum += value }
 R_.each(hash, eacher)
 sum # => 3
 
 # Array
-array = [1,2,3]
+array = [1, 2, 3]
 new_array = []
-eacher = -> (value) { new_array << value }
+eacher = ->(value) { new_array << value }
 R_.each(array, eacher)
-new_array # => [1,2,3]
+new_array # => [1, 2, 3]
 ```
 * * *
 
@@ -436,16 +436,16 @@ R_.for_each_right
 ```ruby
 
 # Hash
-hash = {a: 1, b: 2}
+hash = { a: 1, b: 2 }
 sum = 0
-eacher = -> (value) { sum += value }
+eacher = ->(value) { sum += value }
 R_.each_right(hash, eacher)
 sum # => 3
 
 # Array
-array = [1,2,3]
+array = [1, 2, 3]
 new_array = []
-eacher = -> (value) { new_array << value }
+eacher = ->(value) { new_array << value }
 R_.each_right(array, eacher)
 new_array # => [3,2,1]
 ```
@@ -466,8 +466,8 @@ Checks if predicate returns truthy for all elements of array.
 
 #### Example
 ```ruby
-is_even = -> (value) { value % 2 === 0 }
-R_.every?([1,2,3,4], is_even) # => false
+is_even = ->(value) { value.even? }
+R_.every?([1, 2, 3, 4], is_even) # => false
 
 persons = [
     { name: 'islam', sex: 'male' },
@@ -494,8 +494,8 @@ Iterates over elements of collection, returning an array of all elements predica
 #### Example
 ```ruby
 # Filtering array
-is_even = -> (value) { value % 2 === 0 }
-R_.filter([1,2,3,4], is_even) # => [2,4]
+is_even = ->(value) { value.even? }
+R_.filter([1, 2, 3, 4], is_even) # => [2,4]
 
 # Filtering array of hashes
 persons = [
@@ -508,7 +508,7 @@ R_.filter(persons, { sex: 'female' })
 # => [{ name: 'sabel', sex: 'female' }, { name: 'sonia', sex: 'female' }]
 
 # Filtering hash
-is_even = -> (v, k) { v % 2 === 0 }
+is_even = ->(v, k) { v.even? }
 R_.filter({ a: 1, b: 2, c: 3, d: 4 }, is_even) # => [2,4]
 ```
 * * *
@@ -528,8 +528,8 @@ The opposite of R_.filter, this method returns the elements of collection that p
 #### Example
 ```ruby
 # Filtering array
-is_even = -> (value) { value % 2 === 0 }
-R_.reject([1,2,3,4], is_even) # => [1,3]
+is_even = ->(value) { value.even? }
+R_.reject([1, 2, 3, 4], is_even) # => [1,3]
 
 # Filtering array of hashes
 persons = [
@@ -542,7 +542,7 @@ R_.reject(persons, { sex: 'female' })
 # => [{ name: 'islam', sex: 'male' }]
 
 # Filtering hash
-is_even = -> (v, k) { v % 2 === 0 }
+is_even = ->(v, k) { v.even? }
 R_.reject({ a: 1, b: 2, c: 3, d: 4 }, is_even) # => [1,3]
 ```
 * * *
@@ -564,24 +564,24 @@ Creates an array of values by running each element in collection thru iteratee. 
 ```ruby
 
 # Map for values
-double = -> (value) { value * 2 }
-R_.map([1,2,3], double) # => [2,4,6]
+double = ->(value) { value * 2 }
+R_.map([1, 2, 3], double) # => [2,4,6]
 
 # Map for values and indexes
-double_even_index = -> (value, index) {
-    index % 2 === 0 ? value * 2 : value
+double_even_index = ->(value, index) {
+    index.even? ? value * 2 : value
 }
 
 R_.map([1,2,3,4,5,6,7,8,9], double_even_index) # => [2,2,6,4,10,6,14,8,18]
 
 # Mapping Hashes
-inc_by_one = -> (value) { value + 1 }
+inc_by_one = ->(value) { value + 1 }
 hash = { a: 1 }
 R_.map(hash, inc_by_one) # => [2]
 
 # Mapping Strings
-add_e_to_even_indexes = -> (value, index) {
-    index % 2 === 0 ? value + 'e' : value
+add_e_to_even_indexes = ->(value, index) {
+    index.even? ? value + 'e' : value
 }
 
 R_.map('islam', add_e_to_even_indexes) # => ["ie", "s", "le", "a", "me"]
@@ -603,8 +603,8 @@ Iterates over elements of collection, returning the first element predicate retu
 #### Example
 ```ruby
 
-is_even = -> (value) { value % 2 === 0 }
-R_.find([1,2,3,4], is_even) # => 2
+is_even = ->(value) { value.even? }
+R_.find([1, 2, 3, 4], is_even) # => 2
 
 persons = [
     { name: 'islam', sex: 'male' },
@@ -631,8 +631,8 @@ This method is like R_.find except that it iterates over elements of collection 
 #### Example
 ```ruby
 
-is_even = -> (value) { value % 2 === 0 }
-R_.find_last([1,2,3,4], is_even) # => 4
+is_even = ->(value) { value.even? }
+R_.find_last([1, 2, 3, 4], is_even) # => 4
 
 persons = [
     { name: 'islam', sex: 'male' },
@@ -663,7 +663,7 @@ Reduces collection to a value which is the accumulated result of running each el
 ```ruby
 
 # Array reducer
-sumer = -> (acc, current) {
+sumer = ->(acc, current) {
     acc + current
 }
 
@@ -671,11 +671,11 @@ R_.reduce([1, 2, 3, 4, 5], sumer) # => 15
 
 # Hash reducer
 hash = { a: 1, b: 2 }
-hash_sumer = -> (acc, current) { acc + current }
+hash_sumer = ->(acc, current) { acc + current }
 R_.reduce(hash, hash_sumer, 0) # => 3
 
 # String reducer
-joiner = -> (acc, current) {
+joiner = ->(acc, current) {
     acc + ',' + current
 }
 
@@ -701,14 +701,14 @@ This method is like _.reduce except that it iterates over elements of collection
 #### Example
 ```ruby
 
-sumer = -> (acc, current) {
+sumer = ->(acc, current) {
     acc + current
 }
 
 R_.reduce_right([1, 2, 3, 4, 5], sumer) # => 15
 
 hash = { a: 1, b: 2 }
-hash_sumer = -> (acc, current) { acc + current }
+hash_sumer = ->(acc, current) { acc + current }
 R_.reduce_right(hash, hash_sumer, 0) # => 3
 ```
 * * *
@@ -728,8 +728,8 @@ Checks if predicate returns truthy for any element of collection. Iteration is s
 #### Example
 ```ruby
 
-is_even = -> (value) { value % 2 === 0 }
-R_.some?([1,2,3,4], is_even) # => true
+is_even = ->(value) { value.even? }
+R_.some?([1, 2, 3, 4], is_even) # => true
 
 persons = [
     { name: 'islam', sex: 'male' },
@@ -755,8 +755,8 @@ Gets the size of collection by returning its length for array-like values or the
 #### Example
 ```ruby
 
-R_.size([1,2,3]) # => 3
-R_.size({a: 1, b: 2}) # => 2
+R_.size([1, 2, 3]) # => 3
+R_.size({ a: 1, b: 2 }) # => 2
 R_.size("pebbles") # => 7
 ```
 * * *
@@ -774,7 +774,7 @@ Reverses array and/or string so that the first element becomes the last, the sec
 #### Example
 ```ruby
 
-R_.reverse([1,2,3]) # => [3,2,1]
+R_.reverse([1, 2, 3]) # => [3,2,1]
 R_.reverse('islam') # => 'malsi'
 ```
 * * *
@@ -793,11 +793,11 @@ Creates a proc that invokes the passed proc with arguments reversed.
 
 #### Example
 ```ruby
-subtract = -> (a, b) { a - b }
-subtract.(2, 1) # => 1
+subtract = ->(a, b) { a - b }
+subtract.call(2, 1) # => 1
 
 flipped_subtract = R_.flip(subtract)
-flipped_subtract.(2, 1) # => -1
+flipped_subtract.call(2, 1) # => -1
 ```
 * * *
 
@@ -832,15 +832,15 @@ Creates a proc that negates the result of the passed proc.
 
 #### Example
 ```ruby
-is_even = -> (value) { value % 2 === 0 }
+is_even = ->(value) { value.even? }
 is_odd = R_.negate(is_even)
 
-is_even.(2) # => true
-is_even.(1) # => false
-is_odd.(1) # => true
-is_odd.(2) # => false
+is_even.call(2) # => true
+is_even.call(1) # => false
+is_odd.call(1) # => true
+is_odd.call(2) # => false
 
-R_.filter([1,2,3,4], is_odd) # => [1,3]
+R_.filter([1, 2, 3, 4], is_odd) # => [1,3]
 ```
 * * *
 
@@ -856,9 +856,9 @@ Creates a proc that accepts arguments of proc and either invokes proc returning 
 
 #### Example
 ```ruby
-inc = -> (a, b) { a + b }
-incByOne = R_.curry(inc).(1)
-incByOne.(3) # => 4
+inc = ->(a, b) { a + b }
+incByOne = R_.curry(inc).call(1)
+incByOne.call(3) # => 4
 ```
 * * *
 
@@ -967,7 +967,7 @@ This method is like R_.set except that accepts updater proc to produce the value
 ```ruby
 # Already exist path
 hash = { a: [{ b: { c: 3 } }] };
-manipulate_self = -> (n) { n * n }
+manipulate_self = ->(n) { n * n }
 
 R_.update(hash, 'a[0].b.c', manipulate_self)
 hash # => { a: [{ b: { c: 9 } }] }
@@ -975,7 +975,7 @@ hash # => { a: [{ b: { c: 9 } }] }
 # For not exist paths
 hash = { a: [{ b: { c: 3 } }] }
 
-add_one_if_exist_else_zero = -> (n) {
+add_one_if_exist_else_zero = ->(n) {
     n.nil? ? 0 : n + 1
 }
 
@@ -1001,10 +1001,10 @@ Creates an array of values corresponding to paths of hash.
 
 # Simple hash
 hash = { a: 1, b: 2 }
-R_.at(hash, ['a', 'b']) # => [1,2]
+R_.at(hash, ['a', 'b']) # => [1, 2]
 
 hash = { 'a' => 1, 'b' => 2 }
-R_.at(hash, ['a', 'b']) # => [1,2]
+R_.at(hash, ['a', 'b']) # => [1, 2]
 
 hash = { a: { b: { c: 3 } } }
 R_.at(hash, ['a.b', 'a.b.c']) # => [{ c: 3 }, 3]
@@ -1060,7 +1060,7 @@ Gets the keys of hash.
 
 #### Example
 ```ruby
-hash = {a: 1, b: 2}
+hash = { a: 1, b: 2 }
 R_.keys(hash) # => ['a', 'b']
 ```
 
@@ -1099,11 +1099,11 @@ Creates a function that returns the result of invoking the given functions with 
 
 #### Example
 ```ruby
-inc_two_numbers = -> (num1, num2) { num1 + num2 }
-square = -> (number) { number * number }
-double = -> (number) { number * 2 }
+inc_two_numbers = ->(num1, num2) { num1 + num2 }
+square = ->(number) { number * number }
+double = ->(number) { number * 2 }
 composed = R_.flow([inc_two_numbers, square, double])
-composed.(10, 20) # => 1800
+composed.call(10, 20) # => 1800
 ```
 * * *
 
@@ -1119,10 +1119,10 @@ This method is like `R_.flow` except that it creates a function that invokes the
 
 #### Example
 ```ruby
-square = -> (number) { number * number }
-double = -> (number) { number * 2 }
+square = ->(number) { number * number }
+double = ->(number) { number * 2 }
 composed = R_.flow([square, double])
-composed.(10, 20) # => 400
+composed.call(10, 20) # => 400
 ```
 * * *
 
@@ -1178,7 +1178,7 @@ R_.range(0) # => []
 
 ## “Lang” Methods
 
-### <a id="_is_nil"></a>`R_.is_nil?(value)`
+### <a id="_is_nil"></a>`R_.nil?(value)`
 
 Checks if value is nil.
 
@@ -1190,13 +1190,13 @@ Checks if value is nil.
 
 #### Example
 ```ruby
-R_.is_nil?(nil) # => true
+R_.nil?(nil) # => true
 
-R_.is_nil?(0) # => false
+R_.nil?(0) # => false
 ```
 * * *
 
-### <a id="_is_string"></a>`R_.is_string?(value)`
+### <a id="_is_string"></a>`R_.string?(value)`
 
 Checks if value is string.
 
@@ -1208,14 +1208,14 @@ Checks if value is string.
 
 #### Example
 ```ruby
-R_.is_string?(nil) # => false
+R_.string?(nil) # => false
 
-R_.is_string?('str') # => true
+R_.string?('str') # => true
 ```
 * * *
 
 
-### <a id="_is_array"></a>`R_.is_array?(value)`
+### <a id="_is_array"></a>`R_.array?(value)`
 
 Checks if value is classified as an Array object.
 
@@ -1227,13 +1227,13 @@ Checks if value is classified as an Array object.
 
 #### Example
 ```ruby
-R_.is_array?([1,2,3]) # => true
+R_.array?([1, 2, 3]) # => true
 
-R_.is_array?({ a: 1 }) # => false
+R_.array?({ a: 1 }) # => false
 ```
 * * *
 
-### <a id="_is_hash"></a>`R_.is_hash?(value)`
+### <a id="_is_hash"></a>`R_.hash?(value)`
 
 Checks if value is classified as an Hash object.
 
@@ -1245,13 +1245,13 @@ Checks if value is classified as an Hash object.
 
 #### Example
 ```ruby
-R_.is_hash?([1,2,3]) # => false
+R_.hash?([1, 2, 3]) # => false
 
-R_.is_hash?({ a: 1 }) # => true
+R_.hash?({ a: 1 }) # => true
 ```
 * * *
 
-### <a id="_is_number"></a>`R_.is_number?(value)`
+### <a id="_is_number"></a>`R_.number?(value)`
 
 Checks if value is classified as an Numeric object.
 
@@ -1263,13 +1263,13 @@ Checks if value is classified as an Numeric object.
 
 #### Example
 ```ruby
-R_.is_number?(56) # => true
+R_.number?(56) # => true
 
-R_.is_number?({ a: 1 }) # => false
+R_.number?({ a: 1 }) # => false
 ```
 * * *
 
-### <a id="_is_empty"></a>`R_.is_empty?(value)`
+### <a id="_is_empty"></a>`R_.empty?(value)`
 
 Checks if value is an empty collection.
 
@@ -1281,17 +1281,17 @@ Checks if value is an empty collection.
 
 #### Example
 ```ruby
-R_.is_empty?([1,2,3]) # => false
+R_.empty?([1, 2, 3]) # => false
 
-R_.is_empty?({ a: 1 }) # => false
+R_.empty?({ a: 1 }) # => false
 
-R_.is_empty?([]) # => true
+R_.empty?([]) # => true
 
-R_.is_empty?({}) # => true
+R_.empty?({}) # => true
 ```
 * * *
 
-### <a id="_is_equal"></a>`R_.is_equal?(value, other)`
+### <a id="_is_equal"></a>`R_.equal?(value, other)`
 
 Performs a deep comparison between two values to determine if they are equivalent.
 
@@ -1308,7 +1308,7 @@ Performs a deep comparison between two values to determine if they are equivalen
 hash1 = { a: { b: 2 } }
 hash2 = { a: { b: 2 } }
 
-R_.is_equal?(hash1, hash2) # => true
+R_.equal?(hash1, hash2) # => true
 ```
 * * *
 
@@ -1349,13 +1349,13 @@ Creates a Rudash wrapper instance that wraps value with explicit method chain se
 
 #### Example
 ```ruby
-filter_even = -> (number) { number % 2 == 0 }
-inc_by_one = -> (number) { number + 1 }
+filter_even = ->(number) { number.even? }
+inc_by_one = ->(number) { number + 1 }
 
 # You can chain using all Rudash functions.
-# Pay attention that we are not sending the data ([1,2,3,4])
+# Pay attention that we are not sending the data ([1, 2, 3, 4])
 # in the arguments since it is been sent by the wrapped value
-result = R_.chain([1,2,3,4])
+result = R_.chain([1, 2, 3, 4])
             .filter(filter_even)
             .map(inc_by_one)
             .head()

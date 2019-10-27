@@ -1,6 +1,6 @@
 module Rudash
   module IsNumber
-    def is_number?(value)
+    def number?(value)
       value.is_a?(Numeric)
     end
   end

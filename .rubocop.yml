@@ -1,0 +1,24 @@
+Style/RedundantSelf:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/LineLength:
+  Max: 100
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Style/MethodMissingSuper:
+  Enabled: false
+Style/MissingRespondToMissing:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false

@@ -1,7 +1,7 @@
 require_relative '../rudash'
 
 # This module was written to supply complex subset deep hash and array matching
-# in order to give R_.filter, R_.some?, R_.every? and R_.find the ability to deep match with complex hash queries.
+# in order to give filter, some?, every? and find the ability to deep match with complex hash query.
 # See test_filter_hashes_by_deep_hash (test/filter.rb)
 
 module Rudash
@@ -14,9 +14,9 @@ module Rudash
         # check if every "slice" items exist somehow in the collection
         # without any order consideration.
         if slice.is_a?(Array) && collection.is_a?(Array)
-          return R_.every?(slice, ->(sliceVal) {
-            R_.some?(collection, ->(collectionVal) {
-              self.subset_deep_match?.call(sliceVal, collectionVal)
+          return R_.every?(slice, ->(slice_val) {
+            R_.some?(collection, ->(collection_val) {
+              self.subset_deep_match?.call(slice_val, collection_val)
             })
           })
         end
@@ -39,7 +39,7 @@ module Rudash
             # It's the same hack for JavaScript forEach function.
             raise if match == false
           })
-        rescue
+        rescue StandardError
           return false
         end
 

@@ -6,7 +6,7 @@ module Rudash
       if filter.is_a?(Hash)
         slice_matcher = Rudash::SubsetDeepMatch.subset_deep_match?.call(filter)
         return self.filter(collection, self.negate(slice_matcher))
-      elsif Rudash::Utils.is_function?(filter)
+      elsif Rudash::Utils.function?(filter)
         return self.filter(collection, self.negate(filter))
       else
         return []
