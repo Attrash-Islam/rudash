@@ -17,7 +17,7 @@ Some notes to be aware of:
 
 - You can (and sometimes **SHOULD**) use already existed functions in Rudash, which means that you can use `R_.filter` because it's already implemented. You can access Rudash functions by referring to `self` in your method.
 
-- You **MUST** update the README with the changes if relevant (You can copy from the Lodash website documentation).
+- You **MUST** update the [Rudash Website](https://rudash.netlify.com/) with the changes if relevant ([rudash-website github](https://github.com/Attrash-Islam/rudash-website)).
 
 - All Rudash functions **MUST** be aligned with Ruby community style guidelines, which means that "isNil" becomes "nil?", and "groupBy" will be "group_by".
 
