@@ -1,3 +1,4 @@
+require 'bundler/gem_tasks'
 # frozen_string_literal: true
 
 task :clean do
