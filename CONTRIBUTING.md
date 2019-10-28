@@ -23,4 +23,4 @@ Some notes to be aware of:
 
 - You must **ALWAYS** bump the version in your PRs `(/lib/version.rb)`. Make sure to be aligned to the semantic versioning. In here, adding new functions will cause bumping the minor version, fixing some already implemented logic causes bumping the patch version.
 
-- Perfect PR should look like this one: [#98](https://github.com/Attrash-Islam/rudash/pull/98) 
+- Perfect PR should look like this one: [#98](https://github.com/Attrash-Islam/rudash/pull/98) (**Note**: That the documentation got moved from README.md file to a seperated [repository](https://github.com/Attrash-Islam/rudash-website).
