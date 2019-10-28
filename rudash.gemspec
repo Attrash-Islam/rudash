@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
     s.require_paths = ['lib']
     s.homepage = 'https://github.com/Attrash-Islam/rudash'
     s.metadata = { 'source_code_uri' => 'https://github.com/Attrash-Islam/rudash' }
-    s.required_ruby_version = '>= 2.0'
+    s.required_ruby_version = '>= 2.1.0'
   end
