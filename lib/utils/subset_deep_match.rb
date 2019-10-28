@@ -34,7 +34,7 @@ module Rudash
             })
 
             # That was done for performance manners since
-            # R_.each don't stop when returning false from the proc
+            # R_.each don't stop when returning false from the lambda
             # so we force it to stop by throwing an exception that we catch later
             # It's the same hack for JavaScript forEach function.
             raise if match == false

@@ -51,7 +51,7 @@ class FilterTest < Test::Unit::TestCase
     assert_equal result, [1, 0, { a: 1 }]
   end
 
-  def test_filter_with_wrong_proc
+  def test_filter_with_wrong_predicate
     result = R_.filter([1, 0, nil, { a: 1 }], 5)
     assert_equal result, []
   end

@@ -8,7 +8,7 @@ class UpdateTest < Test::Unit::TestCase
     assert_equal hash, a: 1
   end
 
-  def test_updater_not_proc
+  def test_updater_not_lambda
     hash = { a: 1 }
     R_.update(hash, 'a', 65)
     assert_equal hash, a: 1

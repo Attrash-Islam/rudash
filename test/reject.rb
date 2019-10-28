@@ -53,12 +53,12 @@ class RejectTest < Test::Unit::TestCase
     ]
   end
 
-  def test_array_default_reject_proc
+  def test_array_default_reject_lambda
     result = R_.reject([1, 0, nil, { a: 1 }])
     assert_equal result, [nil]
   end
 
-  def test_hash_default_reject_proc
+  def test_hash_default_reject_lambda
     result = R_.reject(a: 1, b: nil)
     assert_equal result, [nil]
   end

@@ -8,7 +8,7 @@ class MapTest < Test::Unit::TestCase
     assert_equal result, [2, 4, 6]
   end
 
-  def test_not_proc
+  def test_not_predicate
     result = R_.map([1, 2, 3], 6)
     assert_equal result, [nil, nil, nil]
   end

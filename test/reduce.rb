@@ -10,7 +10,7 @@ class ReduceTest < Test::Unit::TestCase
     assert_equal R_.reduce([1, 2, 3, 4, 5], sumer), 15
   end
 
-  def test_reducer_not_proc
+  def test_reducer_not_lambda
     assert_equal R_.reduce([1, 2, 3, 4, 5], 6), nil
   end
 

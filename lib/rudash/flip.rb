@@ -1,12 +1,12 @@
 module Rudash
   module Flip
-    def flip(a_proc)
-      raise 'Expected a Proc/Method' unless Rudash::Utils.function?(a_proc)
+    def flip(a_lambda)
+      raise 'Expected a lambda/Method' unless Rudash::Utils.function?(a_lambda)
 
       ->(*args) {
         reveresed_args = args.reverse
 
-        a_proc.call(*reveresed_args)
+        a_lambda.call(*reveresed_args)
       }
     end
   end
