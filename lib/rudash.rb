@@ -52,6 +52,7 @@ require_relative './rudash/chain.rb'
 require_relative './rudash/flow.rb'
 require_relative './rudash/flow_right.rb'
 require_relative './rudash/unset.rb'
+require_relative './rudash/nth.rb'
 
 ### Utils Requires
 require_relative './utils/index.rb'
@@ -121,6 +122,7 @@ class R_
   extend Rudash::Flow
   extend Rudash::FlowRight
   extend Rudash::Unset
+  extend Rudash::Nth
 end
 
 # rubocop:enable Naming/ClassAndModuleCamelCase
