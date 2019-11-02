@@ -1,5 +1,5 @@
 module Rudash
-  module Last
+  module Default
     def last(array)
       return nil unless array.is_a?(Array)
 

@@ -1,5 +1,5 @@
 module Rudash
-  module Pick
+  module Default
     def pick(hash, paths)
       return self.pick(hash, [paths]) unless paths.is_a?(Array)
       return {} unless hash.is_a?(Hash)

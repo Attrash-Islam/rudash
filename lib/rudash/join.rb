@@ -1,5 +1,5 @@
 module Rudash
-  module Join
+  module Default
     def join(array, separator = ',')
       return '' unless array.is_a?(Array)
 

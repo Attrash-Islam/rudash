@@ -1,5 +1,5 @@
 module Rudash
-  module Tail
+  module Default
     def tail(array)
       return [] unless array.is_a?(Array)
 

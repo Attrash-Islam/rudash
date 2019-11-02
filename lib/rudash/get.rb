@@ -1,5 +1,5 @@
 module Rudash
-  module Get
+  module Default
     def get(hash, path, *_rest_args)
       return nil if !path.is_a?(String) && !path.is_a?(Array)
       return nil if !hash.is_a?(Array) && !hash.is_a?(Hash)

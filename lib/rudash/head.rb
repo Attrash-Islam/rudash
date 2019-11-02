@@ -1,5 +1,5 @@
 module Rudash
-  module Head
+  module Default
     def head(array)
       return nil unless array.is_a?(Array)
 

@@ -1,5 +1,5 @@
 module Rudash
-  module Slice
+  module Default
     def slice(array, *rest_args)
       return self.slice(array.split(''), *rest_args) if array.is_a?(String)
       return [] unless array.is_a?(Array)

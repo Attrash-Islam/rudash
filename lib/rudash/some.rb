@@ -1,5 +1,5 @@
 module Rudash
-  module Some
+  module Default
     def some?(array, filter)
       filtered_arr = self.filter(array, filter)
       !filtered_arr.empty?

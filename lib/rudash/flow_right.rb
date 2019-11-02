@@ -1,5 +1,5 @@
 module Rudash
-  module FlowRight
+  module Default
     def flow_right(*funs)
       flatten_funs = funs.flatten.reverse
 

@@ -1,5 +1,5 @@
 module Rudash
-  module Unset
+  module Default
     def unset(object, path)
       return object if !object.is_a?(Hash) && !object.is_a?(Array)
 
