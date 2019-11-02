@@ -22,5 +22,4 @@ require_relative './utils/chain_wrapper.rb'
 class R_
   extend Rudash::Default
 end
-
 # rubocop:enable Naming/ClassAndModuleCamelCase
