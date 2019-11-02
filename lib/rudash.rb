@@ -1,4 +1,4 @@
-rudash_modules = Dir.entries('./lib/rudash').select do |filename|
+rudash_modules = Dir.entries(File.join(File.dirname(__FILE__), './rudash')).select do |filename|
   filename.include?('.rb')
 end
 

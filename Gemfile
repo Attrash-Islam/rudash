@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 
+gemspec
 gem 'pry', '~> 0.12.2', group: :development
 gem 'rake', '~> 12.3.3', group: :development
 gem 'rubocop', '~> 0.57.1', group: :development
