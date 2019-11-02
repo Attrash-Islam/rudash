@@ -1,5 +1,5 @@
 module Rudash
-  module Intersection
+  module Default
     def intersection(*values)
       intersection_reducer = ->(acc, current) {
         return [] if !current.is_a?(Array) || !acc.is_a?(Array)

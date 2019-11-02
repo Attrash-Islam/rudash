@@ -1,5 +1,5 @@
 module Rudash
-  module Set
+  module Default
     def set(object, path, value)
       return object if !object.is_a?(Hash) && !object.is_a?(Array)
 

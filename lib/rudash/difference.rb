@@ -1,5 +1,5 @@
 module Rudash
-  module Difference
+  module Default
     def difference(*values)
       diff_reducer = ->(acc, current) {
         return [] unless acc.is_a?(Array)

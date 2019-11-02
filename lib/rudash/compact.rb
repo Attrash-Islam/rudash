@@ -1,5 +1,5 @@
 module Rudash
-  module Compact
+  module Default
     def compact(array)
       return [] unless array.is_a?(Array)
 

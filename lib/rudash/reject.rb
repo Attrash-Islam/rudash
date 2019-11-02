@@ -1,5 +1,5 @@
 module Rudash
-  module Reject
+  module Default
     def reject(collection, *rest_args)
       filter = self.head(rest_args) || self.method(:identity)
 
