@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Update
     def update(object, path, *rest_args)
       updater_fn = self.head(rest_args) || self.method(:identity)
       return object unless Rudash::Utils.function?(updater_fn)

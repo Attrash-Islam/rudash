@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Range
     def range(*args)
       start_step = 0
       step_jump = 1

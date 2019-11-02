@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Uniq
     def uniq(value)
       case value
       when String

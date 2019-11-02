@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Flip
     def flip(a_lambda)
       raise 'Expected a lambda/Method' unless Rudash::Utils.function?(a_lambda)
 

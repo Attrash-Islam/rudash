@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module IsNumber
     def number?(value)
       value.is_a?(Numeric)
     end

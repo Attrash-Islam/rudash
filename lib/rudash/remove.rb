@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Remove
     def remove(array, *rest_args)
       return [] unless array.is_a?(Array)
 

@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Keys
     def keys(value)
       case value
       when Hash

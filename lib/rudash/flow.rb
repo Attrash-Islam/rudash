@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Flow
     def flow(*funs)
       flatten_funs = funs.flatten
 

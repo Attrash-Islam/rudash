@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module GroupBy
     def group_by(collection, *rest_args)
       iteratee = self.head(rest_args) || self.method(:identity)
 

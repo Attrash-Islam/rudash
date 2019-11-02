@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Identity
     def identity(first_arg, *_rest_args)
       first_arg
     end

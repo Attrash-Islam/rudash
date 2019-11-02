@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module EachRight
     def each_right(collection, *rest_args)
       reversed_collection = Rudash::Utils.force_reverse(collection)
 

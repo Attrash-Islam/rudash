@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Map
     def map(collection, *rest_args)
       iteratee_fn = self.head(rest_args) || self.method(:identity)
       col = collection.is_a?(String) ? collection.split('') : collection

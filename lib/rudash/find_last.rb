@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module FindLast
     def find_last(collection, *rest_args)
       iteratee_fn = self.head(rest_args)
       filtered_arr = self.filter(collection, iteratee_fn)

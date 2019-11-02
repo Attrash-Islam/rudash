@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Reduce
     def reduce(collection, *rest_args)
       reducer = rest_args[0]
       initial_state = rest_args[1]

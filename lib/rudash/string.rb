@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module IsString
     def string?(object)
       object.is_a?(String)
     end

@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module IsArray
     def array?(value)
       value.is_a?(Array)
     end

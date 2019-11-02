@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Capitalize
     def capitalize(value)
       value.is_a?(String) ? value.capitalize : value.to_s
     end

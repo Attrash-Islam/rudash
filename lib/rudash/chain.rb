@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Chain
     def chain(value)
       Rudash::ChainUtils::ChainWrapper.new(value, self)
     end

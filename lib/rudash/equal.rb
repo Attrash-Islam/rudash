@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module IsEqual
     def equal?(value, other)
       value == other
     end

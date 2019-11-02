@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module DropRight
     def drop_right(array, *rest_args)
       return [] unless self.array?(array)
 

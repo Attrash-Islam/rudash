@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module At
     def at(object, paths)
       get_mapper = ->(path) {
         self.get(object, path)

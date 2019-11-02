@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module IsNil
     def nil?(object)
       object.nil?
     end

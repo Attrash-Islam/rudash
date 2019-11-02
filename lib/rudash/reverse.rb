@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Reverse
     def reverse(value)
       case value
       when Array, String

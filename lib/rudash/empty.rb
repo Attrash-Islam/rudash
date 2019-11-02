@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module IsEmpty
     def empty?(value)
       case value
       when Hash, Array

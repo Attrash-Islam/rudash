@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Take
     def take(array, *rest_args)
       return [] unless self.array?(array)
 

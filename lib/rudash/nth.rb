@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Nth
     def nth(array, *rest_args)
       n = self.head(rest_args) || 0
       return self.nth(array, 0) unless self.number?(n)

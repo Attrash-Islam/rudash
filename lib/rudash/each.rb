@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Each
     def each(collection, *rest_args)
       self.map(collection, *rest_args)
       collection

@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Without
     def without(array, *values)
       return [] unless array.is_a?(Array)
 

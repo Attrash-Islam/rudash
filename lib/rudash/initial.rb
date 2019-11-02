@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Initial
     def initial(array)
       return [] unless array.is_a?(Array)
 

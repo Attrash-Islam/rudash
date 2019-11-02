@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Eq
     def eq?(object, other)
       object.equal?(other)
     end

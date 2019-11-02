@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Filter
     def filter(collection, *rest_args)
       predicate_fn = self.head(rest_args) || self.method(:identity)
 

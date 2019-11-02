@@ -1,5 +1,5 @@
 module Rudash
-  module Default
+  module Union
     def union(*values)
       union_reducer = ->(acc, current) {
         return acc if !current.is_a?(Array) || !acc.is_a?(Array)
