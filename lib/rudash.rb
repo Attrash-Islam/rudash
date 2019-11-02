@@ -1,4 +1,3 @@
-
 rudash_modules = Dir.entries('./lib/rudash').select do |filename|
   filename.include?('.rb')
 end
