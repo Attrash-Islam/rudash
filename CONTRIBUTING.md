@@ -11,7 +11,7 @@ bundle exec rake test
 
 Run Specific Test:
 ```
-bundle exec ruby ./test/reduce.rb
+bundle exec rake test spec='filter.rb'
 ```
 
 Run Lint:

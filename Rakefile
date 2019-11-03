@@ -6,7 +6,7 @@ task :clean do
 end
 
 task :test do
-  sh 'ruby ./test-runner.rb'
+  sh "ruby ./test-runner.rb '#{ENV['spec']}'"
 end
 
 task :lint do
