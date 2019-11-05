@@ -12,9 +12,6 @@ The <a href="https://lodash.com">Lodash</a> popular JavaScript library exported 
 gem install rudash
 ```
 
-### Philosophy of Rudash
-Rudash was written by a JavaScript developer to help JavaScript developers integrate into the ruby world without knowing so much. Lodash JavaScript library is the most popular library ever with wide adoption and most of the JavaScripters use the utility functions in it almost all the time.
-
 ### Usage
 ```ruby
 require 'rudash'
