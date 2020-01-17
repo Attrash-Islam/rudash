@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rudash (4.0.4)
+    rudash (4.1.0)
 
 GEM
   remote: https://rubygems.org/
