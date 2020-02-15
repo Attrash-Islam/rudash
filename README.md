@@ -32,4 +32,4 @@ R_.filter(array,  ->(value) {
 ```
 
 # API
-#### See <a href="https://rudash.netlify.com/">Rudash Website</a>
+#### See <a href="https://rudash-website.now.sh/">Rudash Website</a>
