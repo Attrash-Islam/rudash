@@ -33,3 +33,6 @@ R_.filter(array,  ->(value) {
 
 # API
 #### See <a href="https://rudash-website.now.sh/">Rudash Website</a>
+
+# Libraries built on top of Rudash
+- [rowdb](https://github.com/rowdb/rowdb) - A local JSON database for Ruby inspired by lowdb, using Rudash for easy Hash traversal
